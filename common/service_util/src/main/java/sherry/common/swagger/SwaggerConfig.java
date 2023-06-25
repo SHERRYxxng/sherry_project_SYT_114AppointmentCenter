@@ -1,4 +1,4 @@
-package sherry.common.comfig;
+package sherry.common.swagger;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
@@ -11,23 +11,18 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @Description:
- * @Author: SHERRY
- * @email: <a href="mailto:SherryTh743779@gmail.com">TianHai</a>
- * @Date: 2023/6/25 19:32
- */
-@Configuration
-@EnableSwagger2
-public class Swagger2Config {
+@Configuration//配置类
+@EnableSwagger2 //开启swagger文档
+public class SwaggerConfig {
+
     @Bean
     public Docket webApiConfig(){
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("webApi")
-                .apiInfo(webApiInfo())
+                .groupName("webApi") //组名（自定义）
+                .apiInfo(webApiInfo())//该组的描述信息
                 .select()
                 //只显示api路径下的页面
-                //.paths(Predicates.and(PathSelectors.regex("/api/.*")))
+                .paths(Predicates.and(PathSelectors.regex("/api/.*"))) //显示以api开头的接口 ， 如果不写paths，该组下将会显示所有的接口
                 .build();
     }
     @Bean
@@ -37,9 +32,12 @@ public class Swagger2Config {
                 .apiInfo(adminApiInfo())
                 .select()
                 //只显示admin路径下的页面
-                .paths(Predicates.and(PathSelectors.regex("/admin/.*")))
+                .paths(Predicates.and(PathSelectors.regex("/admin/.*"))) //该组下显示的接口，以admin开头的接口
                 .build();
     }
+
+
+
     private ApiInfo webApiInfo(){
         return new ApiInfoBuilder()
                 .title("网站-API文档")
@@ -48,12 +46,17 @@ public class Swagger2Config {
                 .contact(new Contact("atguigu", "http://atguigu.com", "493211102@qq.com"))
                 .build();
     }
+
+
     private ApiInfo adminApiInfo(){
         return new ApiInfoBuilder()
                 .title("后台管理系统-API文档")
                 .description("本文档描述了后台管理系统微服务接口定义")
                 .version("1.0")
-                .contact(new Contact("atguigu", "http://atguigu.com", "49321112@qq.com"))
+                .contact(new Contact("张三", "http://atguigu.com", "49321112@qq.com"))
                 .build();
     }
+
+
+
 }

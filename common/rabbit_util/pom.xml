@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sherry_project_SYT_114AppointmentCenter</artifactId>
+        <groupId>sherry</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rabbit_util</artifactId>
+
+    <!--把rabbitmq的一些配置，放在这个模块中；哪个微服务想使用rabbitmq，就去添加rabbit_util的依赖-->
+
+
+</project>

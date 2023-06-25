@@ -13,7 +13,8 @@
         <module>service</module>
         <module>service/service_hosp</module>
         <module>common</module>
-        <module>common/service_utils</module>
+        <module>common/rabbit_util</module>
+        <module>common/service_util</module>
     </modules>
 
     <parent>

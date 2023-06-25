@@ -1,15 +1,12 @@
 package sherry.hosp.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 import sherry.model.hosp.HospitalSet;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
-/**
- * @Description:
- * @Author: SHERRY
- * @email: <a href="mailto:SherryTh743779@gmail.com">TianHai</a>
- * @Date: 2023/6/25 19:00
- */
-@Mapper
+// 实体类HospitalSet ， 对应HospitalSetService + HospitalSetServiceImpl 对应HospitalSetController
+// HospitalSetMapper
+@Repository
 public interface HospitalSetMapper extends BaseMapper<HospitalSet> {
+    public Integer calCount();
 }
