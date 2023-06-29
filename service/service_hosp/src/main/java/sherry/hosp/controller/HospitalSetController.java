@@ -228,6 +228,7 @@ public class HospitalSetController {
     @DeleteMapping("{id}")
     public R deleteById(@PathVariable Long id) {
         boolean b = hospitalSetService.removeById(id);
+        System.out.println("sherry");
         return b ? R.ok().message("根据id删除成功") : R.error().message("根据id删除失败");
     }
 
